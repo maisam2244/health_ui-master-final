@@ -8,6 +8,7 @@ import 'package:health/Resources/Drawer/drawer.dart';
 import 'package:health/Resources/Search_bar/search_bar.dart';
 import 'package:health/Resources/Requests/user_requests.dart';
 import 'package:health/Resources/Services_gri/services_grid.dart';
+import 'package:health/View/Splash_Screen/splash_screen.dart';
 import 'package:health/View/User_Authentication/Login_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -20,7 +21,7 @@ class HomePage extends StatelessWidget {
       endDrawer: MyDrawer(
         ontap: () {
           _auth.signOut().then((value) {
-            Get.to(() => LoginScreen());
+            Get.to(() => Splash_Screen());
           });
         },
       ),

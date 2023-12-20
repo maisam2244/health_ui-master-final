@@ -9,6 +9,7 @@ import 'package:health/Resources/Requests/provider_requests.dart';
 import 'package:health/Resources/Search_bar/search_bar.dart';
 import 'package:health/Resources/Services_gri/services_grid.dart';
 import 'package:health/View/Designation%20Registration/provider_login.dart';
+import 'package:health/View/Splash_Screen/splash_screen.dart';
 
 class Service_Provider_Home extends StatelessWidget {
   final _auth = FirebaseAuth.instance;
@@ -20,7 +21,7 @@ class Service_Provider_Home extends StatelessWidget {
       endDrawer: MyDrawer(
         ontap: () {
           _auth.signOut().then((value) {
-            Get.to(() => Provider_login());
+            Get.to(() => Splash_Screen());
           });
         },
       ),

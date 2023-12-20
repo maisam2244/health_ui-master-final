@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:get/get.dart';
+import 'package:health/Resources/AppBar/Providers_available/provider_available.dart';
 import 'package:health/Resources/AppColors/app_colors.dart';
 import 'package:health/View/User_Pages/Doctor_visit/doctor_visit.dart';
 import 'package:health/View/User_Pages/Laboratory/laboratory.dart';
@@ -30,7 +31,7 @@ class CarouselExample extends StatelessWidget {
           Colors.white,
           Icons.medical_services_outlined,
           "Doctor Visit",
-          () => Get.to(() => DoctorVisit()),
+          () => Get.to(() => UserPackages()),
         ),
         _buildCarouselItem(
           "199 SAR",
@@ -39,7 +40,7 @@ class CarouselExample extends StatelessWidget {
           Colors.white,
           Icons.science_outlined,
           "Laboratory",
-          () => Get.to(() => Laboratory()),
+          () => Get.to(() => UserPackages()),
         ),
         _buildCarouselItem(
           "149 SAR",
@@ -48,7 +49,7 @@ class CarouselExample extends StatelessWidget {
           Colors.white,
           Icons.videocam_outlined,
           "Virtual Consultation",
-          () => Get.to(() => VirtualConsultation()),
+          () => Get.to(() => UserPackages()),
         ),
         _buildCarouselItem(
           "229 SAR",
@@ -57,7 +58,7 @@ class CarouselExample extends StatelessWidget {
           Colors.white,
           Icons.healing_outlined,
           "Nurse Visit",
-          () => Get.to(() => NurseVisit()),
+          () => Get.to(() => UserPackages()),
         ),
         _buildCarouselItem(
           "179 SAR",
@@ -66,7 +67,7 @@ class CarouselExample extends StatelessWidget {
           Colors.white,
           Icons.opacity_outlined,
           "Vitamin IV drips and fluids",
-          () => Get.to(() => VitaminDrips()),
+          () => Get.to(() => UserPackages()),
         ),
       ],
     );
