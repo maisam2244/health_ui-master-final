@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:health/Resources/AppBar/Providers_available/provider_available.dart';
+import 'package:health/View/Service%20Provider/Doctor_Visit/doctor_visit_provider.dart';
 import 'package:health/View/Service%20Provider/Provider_home/service_provider_home.dart';
 import 'package:health/View/Splash_Screen/splash_screen.dart';
 import 'package:health/View/User_Authentication/Login_page.dart';

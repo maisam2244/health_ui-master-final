@@ -31,7 +31,7 @@ class CarouselExample extends StatelessWidget {
           Colors.white,
           Icons.medical_services_outlined,
           "Doctor Visit",
-          () => Get.to(() => UserPackages()),
+          () => Get.to(() => DoctorVisit()),
         ),
         _buildCarouselItem(
           "199 SAR",
@@ -40,7 +40,7 @@ class CarouselExample extends StatelessWidget {
           Colors.white,
           Icons.science_outlined,
           "Laboratory",
-          () => Get.to(() => UserPackages()),
+          () => Get.to(() => Laboratory()),
         ),
         _buildCarouselItem(
           "149 SAR",
@@ -49,7 +49,7 @@ class CarouselExample extends StatelessWidget {
           Colors.white,
           Icons.videocam_outlined,
           "Virtual Consultation",
-          () => Get.to(() => UserPackages()),
+          () => Get.to(() => VirtualConsultation()),
         ),
         _buildCarouselItem(
           "229 SAR",
@@ -58,7 +58,7 @@ class CarouselExample extends StatelessWidget {
           Colors.white,
           Icons.healing_outlined,
           "Nurse Visit",
-          () => Get.to(() => UserPackages()),
+          () => Get.to(() => NurseVisit()),
         ),
         _buildCarouselItem(
           "179 SAR",
@@ -67,7 +67,7 @@ class CarouselExample extends StatelessWidget {
           Colors.white,
           Icons.opacity_outlined,
           "Vitamin IV drips and fluids",
-          () => Get.to(() => UserPackages()),
+          () => Get.to(() => Vitamin()),
         ),
       ],
     );

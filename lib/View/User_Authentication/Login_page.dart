@@ -1,14 +1,18 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'package:health/Resources/Button/mybutton.dart';
 import 'package:health/Resources/TextField/MyTextField.dart';
 import 'package:health/Resources/Utils/utils.dart';
 import 'package:health/View/User_Authentication/register_page.dart';
 import 'package:health/View/User_Pages/Home_page/home_page.dart';
-import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+  LoginScreen({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -92,7 +96,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const RegisterPage()));
+                              builder: (context) => RegisterPage()));
                     },
                     child: const Text("register now",
                         style: TextStyle(fontSize: 20)))

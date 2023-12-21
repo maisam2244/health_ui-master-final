@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:health/Resources/AppColors/app_colors.dart';
 import 'package:health/View/Service%20Provider/Doctor_Visit/doctor_visit_provider.dart';
@@ -9,6 +10,9 @@ import 'package:health/View/Service%20Provider/Virtual_Consultation/virtual_cons
 import 'package:health/View/Service%20Provider/Vitamin_IV_Drips_And_Fluids/vitamin_drips_and_fluids_provider.dart';
 
 class Slider_Provider extends StatelessWidget {
+  const Slider_Provider({
+    Key? key,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return CarouselSlider(
@@ -30,7 +34,7 @@ class Slider_Provider extends StatelessWidget {
           Colors.white,
           Icons.medical_services_outlined,
           "Doctor Visit",
-          () => Get.to(() => Doctor_Visit_Provider()),
+          () => Get.to(() => DoctorRequests()),
         ),
         _buildCarouselItem(
           "199 SAR",
@@ -39,7 +43,7 @@ class Slider_Provider extends StatelessWidget {
           Colors.white,
           Icons.science_outlined,
           "Laboratory",
-          () => Get.to(() => Laboratory_Provider()),
+          () => Get.to(() => LaboratoryRequests()),
         ),
         _buildCarouselItem(
           "149 SAR",
@@ -48,7 +52,7 @@ class Slider_Provider extends StatelessWidget {
           Colors.white,
           Icons.videocam_outlined,
           "Virtual Consultation",
-          () => Get.to(() => Virtual_Consultation_Provider()),
+          () => Get.to(() => VirtualConsultationRequest()),
         ),
         _buildCarouselItem(
           "229 SAR",
@@ -57,7 +61,7 @@ class Slider_Provider extends StatelessWidget {
           Colors.white,
           Icons.healing_outlined,
           "Nurse Visit",
-          () => Get.to(() => Nurse_Visit_Provider()),
+          () => Get.to(() => NurseVisitRequest()),
         ),
         _buildCarouselItem(
           "179 SAR",
@@ -66,7 +70,7 @@ class Slider_Provider extends StatelessWidget {
           Colors.white,
           Icons.opacity_outlined,
           "Vitamin IV drips and fluids",
-          () => Get.to(() => Vitamin_IV_Drips_And_Fluids_Provider()),
+          () => Get.to(() => VitaminRequest()),
         ),
       ],
     );

@@ -1,7 +1,11 @@
 import 'dart:async';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class NurseVisit extends StatefulWidget {
@@ -24,6 +28,11 @@ class _NurseVisitState extends State<NurseVisit> {
         position: LatLng(24.8846, 70.1754),
         infoWindow: InfoWindow(title: "Current Location"))
   ];
+  String stAddress = '';
+  String Latitude = " ";
+  String Longitude = " ";
+  bool address = false;
+  final fireStore = FirebaseFirestore.instance.collection("User_appointments");
 
   @override
   void initState() {
@@ -41,6 +50,9 @@ class _NurseVisitState extends State<NurseVisit> {
 
   @override
   Widget build(BuildContext context) {
+    final _auth = FirebaseAuth.instance;
+    final user = _auth.currentUser;
+
     return Scaffold(
       body: SafeArea(
         child: GoogleMap(
@@ -54,34 +66,75 @@ class _NurseVisitState extends State<NurseVisit> {
           },
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          // GoogleMapController controller = await _controller.future;
-          // controller.animateCamera(CameraUpdate.newCameraPosition(
-          //   CameraPosition(target: LatLng(24.8846, 67.1754), zoom: 14.4746),
-          // ));
-          // setState(() {});
+      floatingActionButton: Align(
+        alignment: Alignment.bottomCenter,
+        child: FloatingActionButton(
+          onPressed: () async {
+            address = true;
+            getUserCurrentLocation().then((value) async {
+              print("My Location");
+              print(
+                  value.latitude.toString() + " " + value.longitude.toString());
+              _marker.add(Marker(
+                  markerId: MarkerId("2"),
+                  position: LatLng(value.latitude, value.longitude),
+                  infoWindow: InfoWindow(title: "My Location")));
+              Latitude = value.latitude.toString();
+              Longitude = value.longitude.toString();
 
-          getUserCurrentLocation().then((value) async {
-            print("My Location");
-            print(value.latitude.toString() + " " + value.longitude.toString());
-            _marker.add(Marker(
-                markerId: MarkerId("2"),
-                position: LatLng(value.latitude, value.longitude),
-                infoWindow: InfoWindow(title: "My Location")));
-            CameraPosition cameraPosition = CameraPosition(
-                zoom: 14,
-                target: LatLng(
-                  value.latitude,
-                  value.longitude,
-                ));
-            final GoogleMapController controller = await _controller.future;
-            controller
-                .animateCamera(CameraUpdate.newCameraPosition(cameraPosition));
-            setState(() {});
-          });
-        },
-        child: Icon(Icons.navigation),
+              List<Placemark> placemarks = await placemarkFromCoordinates(
+                  value.latitude, value.longitude);
+              stAddress = placemarks.reversed.last.country.toString() +
+                  " " +
+                  placemarks.reversed.last.locality.toString() +
+                  " " +
+                  placemarks.reversed.last.street.toString();
+              CameraPosition cameraPosition = CameraPosition(
+                  zoom: 14,
+                  target: LatLng(
+                    value.latitude,
+                    value.longitude,
+                  ));
+              final GoogleMapController controller = await _controller.future;
+              controller.animateCamera(
+                  CameraUpdate.newCameraPosition(cameraPosition));
+              setState(() {});
+            });
+          },
+          child: Icon(Icons.navigation),
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        child: Row(children: [
+          TextButton(
+              onPressed: () {
+                Get.defaultDialog(
+                  title: "Confirm",
+                  middleText: "Are you sure you want to confirm",
+                  onCancel: () {
+                    Navigator.pop(context);
+                  },
+                  onConfirm: () {
+                    setState(() {
+                      fireStore.doc(user!.email).set({
+                        "email": user.email,
+                        "address": stAddress,
+                        "type": "Nurse Visit"
+                      });
+                      Navigator.pop(context);
+                    });
+                  },
+                  textCancel: "Cancel",
+                  textConfirm: "Confirm",
+                );
+              },
+              child: Text(
+                address
+                    ? stAddress
+                    : " Address will appear here when you press the button",
+                style: TextStyle(color: Colors.blue, fontSize: 15),
+              )),
+        ]),
       ),
     );
   }

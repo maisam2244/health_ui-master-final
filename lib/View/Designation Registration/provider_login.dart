@@ -1,5 +1,8 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'package:health/Resources/Button/mybutton.dart';
 import 'package:health/Resources/TextField/MyTextField.dart';
 import 'package:health/Resources/Utils/utils.dart';
@@ -7,10 +10,11 @@ import 'package:health/View/Designation%20Registration/designation.dart';
 import 'package:health/View/Service%20Provider/Provider_home/service_provider_home.dart';
 import 'package:health/View/User_Authentication/register_page.dart';
 import 'package:health/View/User_Pages/Home_page/home_page.dart';
-import 'package:flutter/material.dart';
 
 class Provider_login extends StatefulWidget {
-  const Provider_login({super.key});
+  Provider_login({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<Provider_login> createState() => _Provider_loginState();

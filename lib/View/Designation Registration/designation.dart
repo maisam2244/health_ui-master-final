@@ -1,13 +1,18 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'package:health/Resources/Button/mybutton.dart';
 import 'package:health/Resources/Designation_Dropdown/dropdown.dart';
 import 'package:health/Resources/TextField/MyTextField.dart';
 import 'package:health/Resources/Utils/utils.dart';
 import 'package:health/View/Service%20Provider/Provider_home/service_provider_home.dart';
-import 'package:health/Resources/Button/mybutton.dart';
 
 class Designation extends StatefulWidget {
+  const Designation({
+    Key? key,
+  }) : super(key: key);
   @override
   State<Designation> createState() => _DesignationState();
 }
