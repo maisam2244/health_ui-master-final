@@ -1,8 +1,11 @@
 // ignore_for_file: unused_import
 
+import 'package:file_picker/file_picker.dart' as FilePicker;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:health/Resources/AppBar/Providers_available/provider_available.dart';
+import 'package:health/View/Provider_services/Result_upload/result_upload.dart';
+import 'package:health/View/Provider_services/Users_requests/user_requests.dart';
 import 'package:health/View/Service%20Provider/Doctor_Visit/doctor_visit_provider.dart';
 import 'package:health/View/Service%20Provider/Provider_home/service_provider_home.dart';
 import 'package:health/View/Splash_Screen/splash_screen.dart';
@@ -15,6 +18,7 @@ import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await FilePicker.PlatformFile;
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }

@@ -36,24 +36,14 @@ class Service_Provider_Home extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              MySearchBar(),
-              SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                    'Services:',
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
+                children: [],
               ),
-              Slider_Provider(),
+              // Slider_Provider(),
               SizedBox(height: 20),
               Text(
-                'Other Services:',
+                'Services:',
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,

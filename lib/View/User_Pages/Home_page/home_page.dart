@@ -10,6 +10,7 @@ import 'package:health/Resources/Drawer/drawer.dart';
 import 'package:health/Resources/Requests/user_requests.dart';
 import 'package:health/Resources/Search_bar/search_bar.dart';
 import 'package:health/Resources/Services_gri/services_grid.dart';
+import 'package:health/Resources/Services_gri/user_grid.dart';
 import 'package:health/View/Splash_Screen/splash_screen.dart';
 import 'package:health/View/User_Authentication/Login_page.dart';
 
@@ -63,7 +64,7 @@ class HomePage extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              MoreServicesGrid(),
+              UserServicesGrid(),
               Requests()
             ],
           ),

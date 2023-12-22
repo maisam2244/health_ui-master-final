@@ -100,6 +100,13 @@ class _VitaminState extends State<Vitamin> {
                   CameraUpdate.newCameraPosition(cameraPosition));
               setState(() {});
             });
+            Get.snackbar(
+                "To proceed", "Kindly click on your address mentioned below",
+                duration: Duration(seconds: 5),
+                colorText: Colors.black,
+                backgroundColor: Colors.green,
+                borderColor: Colors.black,
+                borderWidth: 1);
           },
           child: Icon(Icons.navigation),
         ),

@@ -4,15 +4,17 @@ import 'package:health/Resources/AppColors/app_colors.dart';
 import 'package:health/View/Accepted_appointments/accepted_appointments.dart';
 import 'package:health/View/Provider_services/Accepted_requests/accepted_requests.dart';
 import 'package:health/View/Provider_services/Result_upload/result_upload.dart';
+import 'package:health/View/User_services/Results/results.dart';
+import 'package:health/View/User_services/User_appointments/User_appointments.dart';
 
 import '../../View/Provider_services/Users_requests/user_requests.dart';
 
-class ServiceIconButton extends StatelessWidget {
+class UserGridServices extends StatelessWidget {
   final IconData serviceIcon;
   final String serviceName;
   final VoidCallback onPressed;
 
-  const ServiceIconButton({
+  const UserGridServices({
     Key? key,
     required this.serviceIcon,
     required this.serviceName,
@@ -39,7 +41,7 @@ class ServiceIconButton extends StatelessWidget {
   }
 }
 
-class MoreServicesGrid extends StatelessWidget {
+class UserServicesGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
@@ -49,33 +51,33 @@ class MoreServicesGrid extends StatelessWidget {
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
       children: [
-        ServiceIconButton(
+        UserGridServices(
           serviceIcon: Icons.calendar_month_outlined,
           serviceName: "Appointments",
           onPressed: () {
-            Get.to(() => UserRequests());
+            Get.to(() => MyAppointments());
           },
         ),
-        ServiceIconButton(
+        UserGridServices(
           serviceIcon: Icons.add_box_outlined,
           serviceName: "Accepted Appointments",
           onPressed: () {
             Get.to(() => AcceptedRequests());
           },
         ),
-        ServiceIconButton(
+        UserGridServices(
           serviceIcon: Icons.list_alt,
-          serviceName: "Upload Results",
+          serviceName: "See result",
           onPressed: () {
-            Get.to(() => ResultUpload());
+            Get.to(() => UserResult());
           },
         ),
-        ServiceIconButton(
+        UserGridServices(
           serviceIcon: Icons.message_outlined,
           serviceName: "Contact Us",
           onPressed: () {},
         ),
-        ServiceIconButton(
+        UserGridServices(
           serviceIcon: Icons.family_restroom,
           serviceName: "Family",
           onPressed: () {},
