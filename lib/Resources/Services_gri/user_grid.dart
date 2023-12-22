@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:health/Resources/AppColors/app_colors.dart';
 import 'package:health/View/Accepted_appointments/accepted_appointments.dart';
+import 'package:health/View/Provider_services/About_us/about_us.dart';
 import 'package:health/View/Provider_services/Accepted_requests/accepted_requests.dart';
 import 'package:health/View/Provider_services/Result_upload/result_upload.dart';
 import 'package:health/View/User_services/Results/results.dart';
 import 'package:health/View/User_services/User_appointments/User_appointments.dart';
+import 'package:get/get.dart';
 
 import '../../View/Provider_services/Users_requests/user_requests.dart';
 
@@ -81,6 +83,13 @@ class UserServicesGrid extends StatelessWidget {
           serviceIcon: Icons.family_restroom,
           serviceName: "Family",
           onPressed: () {},
+        ),
+        UserGridServices(
+          serviceIcon: Icons.info,
+          serviceName: "About us",
+          onPressed: () {
+            Get.to(() => AboutUsPage());
+          },
         ),
       ],
     );

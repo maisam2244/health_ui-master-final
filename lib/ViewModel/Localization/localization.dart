@@ -2,7 +2,6 @@ import 'package:get/get.dart';
 
 @override
 class Language extends Translations {
-
   @override
   Map<String, Map<String, String>> get keys => {
         "en_US": {
@@ -11,16 +10,53 @@ class Language extends Translations {
           "Virtual consultation": "Virtual consultation",
           "Vitamin IV drips and fluids": "Vitamin IV drips and fluids",
           "Laboratory": "Laboratory",
+          "Our Services ": "Our Services ",
+          "Appointments": "Appointments",
+          "Accepted appointments": "Accepted appointments",
+          "Contact": "Contact",
+          "Family": "Family",
+          "About us": "About us",
+          "Your requests": "Your requests",
+          "logout": "Logout",
+          "Login": "Login",
+          "Register": "Register",
+          "Result upload": "Result Upload",
+          "Upload Result": "Upload Result",
+          "Name": "Name",
+          "email": "email",
+          "phone number": "phone number",
+          "password": "password",
+          "Register as a Service Provider": "Register as a Service Provider",
+          "Designation": "Designation",
+          "Register as a User": "Register as a User",
+          "Pending appointments": "Pending appointments",
         },
         "ar_AE": {
           "Nurse visit": "زيارة تمريض",
           "Doctor visit": "زيارة طبيب",
           "Virtual consultation": "استشارة طبيب عن بعد",
           "Laboratory ": " الفحوصات",
-          "Vitamin IV drips and fluids": "المحاليل والسوائل"
-          
-
+          "Vitamin IV drips and fluids": "المحاليل والسوائل",
+          "Our Services ": " خدماتنا ",
+          "Appointments": "المواعيد",
+          "Accepted appointments": "المواعيد المقبولة",
+          "Contact": "اتصل بنا",
+          "Family": "عائلة",
+          "About us": "من نحن",
+          "Your requests": "طلباتك",
+          "logout": "تسجيل خروج",
+          "Login": "تسجيل الدخول",
+          "Register": "تسجيل",
+          "Result upload": "تحميل نتيجة",
+          "Upload Result": "تحميل نتيجة",
+          "Name": "الاسم",
+          "email": "البريد الالكتروني",
+          "phone number": "رقم الهاتف",
+          "password": "كلمة المرور",
+          "Register as a Service Provider": "تسجيل كمزود خدمة",
+          "Designation": "التعيين",
+          "Register as a User": "تسجيل كمستخدم",
+          "Pending appointments": "المواعيد المعلقة",
         }
       };
 }
-

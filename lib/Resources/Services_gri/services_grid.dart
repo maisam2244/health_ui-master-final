@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:health/Resources/AppColors/app_colors.dart';
 import 'package:health/View/Accepted_appointments/accepted_appointments.dart';
+import 'package:health/View/Provider_services/About_us/about_us.dart';
 import 'package:health/View/Provider_services/Accepted_requests/accepted_requests.dart';
 import 'package:health/View/Provider_services/Result_upload/result_upload.dart';
 
@@ -79,6 +80,13 @@ class MoreServicesGrid extends StatelessWidget {
           serviceIcon: Icons.family_restroom,
           serviceName: "Family",
           onPressed: () {},
+        ),
+        ServiceIconButton(
+          serviceIcon: Icons.info,
+          serviceName: "About Us",
+          onPressed: () {
+            Get.to(() => AboutUsPage());
+          },
         ),
       ],
     );

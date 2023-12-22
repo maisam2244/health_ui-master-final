@@ -14,59 +14,87 @@ class Splash_Screen extends StatefulWidget {
   Splash_Screen({
     Key? key,
   }) : super(key: key);
+
   @override
   State<Splash_Screen> createState() => _Splash_ScreenState();
 }
 
 class _Splash_ScreenState extends State<Splash_Screen> {
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    // final splashServices = SplashServices();
-    // splashServices.splashNavigation();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Center(
-            child: CircleAvatar(
-              radius: 140,
-              backgroundImage: AssetImage("assets/logo/harees_logo.png"),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0.0,
+        title: Text('Harees'),
+        actions: [
+          TextButton(
+            onPressed: () {
+              setState(() {
+                Get.updateLocale(Locale('en', "EN"));
+              });
+            },
+            child: Text(
+              'English',
+              style: TextStyle(color: Colors.black),
             ),
           ),
-          SizedBox(
-            height: 25,
+          SizedBox(width: 16),
+          TextButton(
+            onPressed: () {
+              setState(() {
+                Get.updateLocale(Locale('ar', "AE"));
+              });
+              // Add your Arabic button logic here
+            },
+            child: Text(
+              'Arabic',
+              style: TextStyle(color: Colors.black),
+            ),
           ),
-          Center(
+        ],
+      ),
+      body: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Center(
+              child: CircleAvatar(
+                radius: 140,
+                backgroundImage: AssetImage("assets/logo/harees_logo.png"),
+              ),
+            ),
+            SizedBox(
+              height: 25,
+            ),
+            Center(
               child: Text(
-            "Harees ",
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-          )),
-          SizedBox(
-            height: 30,
-          ),
-          RoundButton(
+                "Harees ",
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              ),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            RoundButton(
               text: "Join as a user",
               onTap: () {
                 Get.to(() => LoginScreen());
-              }),
-          SizedBox(
-            height: 10,
-          ),
-          RoundButton(
+              },
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            RoundButton(
               text: "Join as a provider",
               onTap: () {
                 Get.to(() => Provider_login());
-              })
-        ],
+              },
+            )
+          ],
+        ),
       ),
-    ));
+    );
   }
 }

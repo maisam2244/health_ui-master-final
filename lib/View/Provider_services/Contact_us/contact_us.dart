@@ -3,10 +3,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:health/Resources/Button/mybutton.dart';
 
-class UserContact extends StatelessWidget {
-  UserContact({super.key});
+class ProviderContact extends StatelessWidget {
+  ProviderContact({super.key});
   final _auth = FirebaseAuth.instance;
-  final _fireStore = FirebaseFirestore.instance.collection("User_contact_us");
+  final _fireStore =
+      FirebaseFirestore.instance.collection("Provider_contact_us");
   final message = TextEditingController();
 
   @override

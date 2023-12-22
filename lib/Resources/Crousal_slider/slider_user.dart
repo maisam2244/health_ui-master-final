@@ -57,7 +57,7 @@ class CarouselExample extends StatelessWidget {
           MyColors.skin,
           Colors.white,
           Icons.healing_outlined,
-          "Nurse Visit",
+          "Nurse visit".tr,
           () => Get.to(() => NurseVisit()),
         ),
         _buildCarouselItem(
